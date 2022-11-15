@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class CodingAssignment {
 
@@ -9,7 +10,7 @@ public class CodingAssignment {
 //		a.	Programmatically subtract the value of the first element in the array from the value in the last
 //			element of the array (i.e. do not use ages[7] in your code). Print the result to the console.  
 			int subtractAge = ages[ages.length-1]-ages[0];
-			System.out.println(subtractAge);
+			System.out.println("93 - 3 = "+subtractAge);
 			
 //		b.	******Add a new age to your array and repeat the step above to ensure it is dynamic (works for 
 //			arrays of different lengths). 
@@ -19,7 +20,7 @@ public class CodingAssignment {
 			int total =0;
 			for(int age :ages) 
 				total+=age;
-			System.out.println("The Average Age is: "+total/ages.length);
+			System.out.println("The average age is: "+total/ages.length);
 			
 //		2.	Create an array of String called names that contains the following values: 
 //			“Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
@@ -30,7 +31,7 @@ public class CodingAssignment {
 			total =0;
 			for(String name :names) 
 				total+=name.length();		
-			System.out.println("The Name length is: "+total/names.length);
+			System.out.println("The average name length is: "+total/names.length);
 			
 //		b.	Use a loop to iterate through the array again and concatenate all the names together, separated 
 //			by spaces, and print the result to the console.
@@ -43,15 +44,26 @@ public class CodingAssignment {
 			System.out.println(concatenateNames);
 			
 //		3.	How do you access the last element of any array?
-			System.out.println(ages[ages.length-1]);
+			System.out.println(ages[ages.length-1]+" is the last elemement");
 			
 //		4.	How do you access the first element of any array?
-			System.out.println(ages[0]);
+			System.out.println(ages[0]+" is the first elemement");
 			
 //		5.	Create a new array of int called nameLengths. Write a loop to iterate over the previously created 
 //			names array and add the length of each name to the nameLengths array.
+			int[] nameLengths = new int [names.length];
+			for(int i =0;i<=names.length-1;i++) 
+				nameLengths[i]=names[i].length();
+			System.out.println("The lenghts of the names are "+Arrays.toString(nameLengths));
+			
+			
 //		6.	Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
 //			Print the result to the console.
+			int nameLenghtsSum =0;
+			for(int nameLength:nameLengths)
+				nameLenghtsSum+=nameLength;
+			System.out.println("The sum of the lenghts of the names are "+nameLenghtsSum);
+			
 //		7.	Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated 
 //			to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
 //		8.	Write a method that takes two Strings, firstName and lastName, and returns a full name 
