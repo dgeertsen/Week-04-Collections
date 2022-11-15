@@ -1,3 +1,4 @@
+//Coding Assignment for Weeks 3 & 4
 import java.util.Arrays;
 
 public class CodingAssignment {
@@ -66,6 +67,8 @@ public class CodingAssignment {
 			
 //		7.	Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated 
 //			to itself n number of times. (i.e. if I pass in “Hello” and 3, I expect the method to return “HelloHelloHello”).
+			System.out.println(repeatWord("Hello",3));
+			
 //		8.	Write a method that takes two Strings, firstName and lastName, and returns a full name 
 //			(the full name should be the first and the last name as a String separated by a space).
 //		9.	Write a method that takes an array of int and returns true if the sum of all the ints in the array is 
@@ -79,5 +82,18 @@ public class CodingAssignment {
 //			why you created it.
 
 	}
+	static String repeatWord(String userWord, int numTimes) {
+		// Write your code in here 
+	    String myString="";
+	    
+	    for(int i = 0; i < numTimes; i++){
+	         myString += userWord;
+	    }
+       
 
+         return myString;
+	
+
+	}
 }
+
