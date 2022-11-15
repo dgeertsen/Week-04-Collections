@@ -71,6 +71,8 @@ public class CodingAssignment {
 			
 //		8.	Write a method that takes two Strings, firstName and lastName, and returns a full name 
 //			(the full name should be the first and the last name as a String separated by a space).
+			System.out.println(fullName("Devon","Geertsn"));
+			
 //		9.	Write a method that takes an array of int and returns true if the sum of all the ints in the array is 
 //			greater than 100.
 //		10.	Write a method that takes an array of double and returns the average of all the elements in the array.
@@ -82,6 +84,7 @@ public class CodingAssignment {
 //			why you created it.
 
 	}
+	
 	static String repeatWord(String userWord, int numTimes) {
 		// Write your code in here 
 	    String myString="";
@@ -95,5 +98,12 @@ public class CodingAssignment {
 	
 
 	}
+	
+	static String fullName(String firstName, String string) {
+		 return firstName + " "+string;
+	
+
 }
+}
+
 
