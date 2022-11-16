@@ -99,16 +99,32 @@ public class CodingAssignment {
 		System.out.println(isArrayGreaterThan100(fours));
 
 		//		10.	Write a method that takes an array of double and returns the average of all the elements in the array.
-		
-		
+		//create array of doubles
+		double[] myDoubles = new double [] {4,8,12,16,20,24};
+		System.out.println(averageOfDoubleArray (myDoubles));
 		
 		//		11.	Write a method that takes two arrays of double and returns true if the average of the elements in the 
 		//			first array is greater than the average of the elements in the second array.
+		//False test. MY doubles = my doubles, so it can't be greater.
+		System.out.println(doubleCompare (myDoubles,myDoubles));
+		
+		//True test.
+		double[] years = new double [] {3};
+		System.out.println(doubleCompare (myDoubles,years));
+		
+		
 		//		12.	Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, 
 		//			and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+		//Test cases for false.
+		System.out.println(willBuyDrink (true,10.50));
+		System.out.println(willBuyDrink (false,10.51));
+		System.out.println(willBuyDrink (false,10.50));
+		//Test case for true.
+		System.out.println(willBuyDrink (true,10.51));
+		
 		//		13.	Create a method of your own that solves a problem. In comments, write what the method does and 
 		//			why you created it.
-
+		
 	}
 
 	
@@ -144,8 +160,33 @@ public class CodingAssignment {
 
 	}
 
+	//Passes array of type double and returns average.
+	static double averageOfDoubleArray (double[] numbers) {
+		double total=0;
+		//Add each element of the array to total & return the average.
+		for(double number:numbers)
+			total+=number;
+		return total/numbers.length;
+	}
 	
-
+	//Compares two arrays of type double. REturns true based on average values
+	static boolean doubleCompare (double[] arrayOne,double[] arrayTwo) {
+		double totalOne=0;
+		double totalTwo=0;
+		//Add each element of the array to total.
+		for(double number:arrayOne)
+			totalOne+=number;
+		for(double number:arrayTwo)
+			totalTwo+=number;
+		//Compare the values and return a value
+		return (totalOne/arrayOne.length>totalTwo/arrayTwo.length);
+			
+	}
+	
+	static boolean willBuyDrink (boolean isHotOutside,double moneyInPocket) {
+		return (isHotOutside == true && moneyInPocket>10.50);
+	}
+	
+	
 }
-
 
