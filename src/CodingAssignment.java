@@ -4,6 +4,10 @@ import java.util.Arrays;
 public class CodingAssignment {
 
 	public static void main(String[] args) {
+		int[] array = new int[] {1,5,2,8,13,6};
+		//print out first element of myIntArray
+		System.out.println(array.length);
+		
 		// TODO Auto-generated method stub
 		//		1.	Create an array of int called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
 		//Initialize new array using given parameters.
