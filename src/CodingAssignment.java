@@ -124,6 +124,7 @@ public class CodingAssignment {
 		
 		//13. Create a method of your own that solves a problem. In comments, write what the method does and 
 		//why you created it.
+		//What to do if you have no problem
 		
 	}
 
@@ -186,7 +187,9 @@ public class CodingAssignment {
 	static boolean willBuyDrink (boolean isHotOutside,double moneyInPocket) {
 		return (isHotOutside == true && moneyInPocket>10.50);
 	}
-	
+	static boolean dailyDates (boolean isHotOutside,double moneyInPocket) {
+		return (isHotOutside == true && moneyInPocket>10.50);
+	}	
 	
 }
 
