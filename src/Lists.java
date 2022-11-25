@@ -5,6 +5,7 @@ public class Lists {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//ArrayLists are Dynamic
 		List<String> sports = new ArrayList<String>();
 		sports.add("Wrestling");
 		sports.add("Soccer");
@@ -16,8 +17,10 @@ public class Lists {
 		
 		for(String sport : sports)
 			System.out.println(sport);
-		
 		sports.remove(0);
-	}
 
+		
+
+	}
+	
 }
