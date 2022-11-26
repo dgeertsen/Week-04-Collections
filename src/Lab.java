@@ -1,24 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
 
-public class Labs_Part_1 {
+public class Lab {
 
 	public static void main(String[] args) {
 		//why would we use a StringBuilder instead of a String?
-		
+		//Used when an object is changed many times
 		
 		//instantiate a new StringBuilder and append the characters 0 through 9 to it separated by dashes
 		//make sure no dash appears at the end of the StringBuilder
+		StringBuilder sb =new StringBuilder();
+		for(int i=0;i<10;i++)
+			if(i!=9)
+				sb.append(i+"-");
+			else
+				sb.append(i);
+		System.out.println(sb.toString());
 		
 		//create a list of Strings and add 5 Strings to it, each with a different length
+		List<String> strings=new ArrayList<String>();
+		strings.add("Kim");
+		strings.add("Devon");
+		strings.add("Mikaela");
+		strings.add("Michaela");
+		strings.add("Tierra");
 	
 		//write and test a method that takes a list of strings and returns the shortest string
-		
+		System.out.println(shortestString(strings));
 				
 		//write and test a method that takes a list of strings and returns the list with the first and last element switched
-	
+		System.out.println(switched(strings));
 				
 		//write and test a method that takes a list of strings and returns a string with all the list elements concatenated to each other,
 		//separated by a comma
-		
+		System.out.println(joinedList(strings));
 				
 				
 		//write and test a method that takes a list of strings and a string and returns a new list with all strings from the original list
@@ -58,4 +73,40 @@ public class Labs_Part_1 {
 
 	}
 
+	private static String joinedList(List<String> strings) {
+		// TODO Auto-generated method stub
+		StringBuilder output = new StringBuilder();
+		for(int i=0; i<strings.size();i++) {
+			if(i!=strings.size()-1)
+					output.append(strings.get(i)+", ");
+			else
+				output.append(strings.get(i)+", ");
+		}
+		return output.toString();
+	}
+
+	private static String switched(List<String> strings) {
+		String temp=strings.get(0);
+		strings.set(0,strings.get(strings.size()-1));
+		strings.set(strings.size()-1,temp);
+		
+		
+		
+		
+		return strings.toString();
+	}
+
+	public static String shortestString(List<String> list) {
+		String shortest = list.get(0);
+		for(String string:list) {
+			if(string.length()<shortest.length())
+				shortest=string;
+		}
+			
+		return shortest;
+		
+		
+	}
+
 }
+;
