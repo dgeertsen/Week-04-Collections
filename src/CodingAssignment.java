@@ -124,11 +124,23 @@ public class CodingAssignment {
 		
 		//13. Create a method of your own that solves a problem. In comments, write what the method does and 
 		//why you created it.
-		//What to do if you have no problem
+		//50% for Must Haves
+		//30% Wants
+		//20% debt repayment
+		System.out.println(myBudget(3570));
 		
 	}
 
 	
+	public static String myBudget(int salary) {
+		// TODO Auto-generated method stub
+		return "Must haves: "+salary*.50
+				+"\nWants: "+salary*.30
+				+"\nWDebt: "+salary*.20;
+		
+	}
+
+
 	//Method takes an int and string. It then concatenates the string x number of times, where x = the int passed.
 	static String repeatWord(String userWord, int numTimes) {
 		//empty string, to hold my value
@@ -187,9 +199,7 @@ public class CodingAssignment {
 	static boolean willBuyDrink (boolean isHotOutside,double moneyInPocket) {
 		return (isHotOutside == true && moneyInPocket>10.50);
 	}
-	static boolean dailyDates (boolean isHotOutside,double moneyInPocket) {
-		return (isHotOutside == true && moneyInPocket>10.50);
-	}	
+	
 	
 }
 
