@@ -4,16 +4,12 @@ import java.util.Arrays;
 public class CodingAssignment {
 
 	public static void main(String[] args) {
-		//1. Create an array of int called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
-		//Initialize new array using given parameters.
+		//1. Initialize Array 
 		int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
-		//a. Programmatically subtract the value of the first element in the array from the value in the last
-		//element of the array (i.e. do not use ages[7] in your code). Print the result to the console.  
-		//Subtract [0] (which is the first element) from [length - 1](which is the last element of the array).
+		//a. Last Element - First Element
 		int subtractAge = ages[ages.length-1]-ages[0];
 		System.out.println(ages[ages.length-1]+" - "+ages[0]+" = "+subtractAge);
-		//b.******Add a new age to your array and repeat the step above to ensure it is dynamic (works for 
-		//arrays of different lengths). 
+		//b.Copy Array to add new element
 		int n = ages.length;
 		int[] newAges = new int[n+1];
 		System.arraycopy(ages, 0, newAges, 0, n);
@@ -21,8 +17,7 @@ public class CodingAssignment {
 		subtractAge = newAges[newAges.length-1]-newAges[0];
 		System.out.println(newAges[newAges.length-1]+" - "+newAges[0]+" = "+subtractAge);
 		
-		//c.Use a loop to iterate through the array and calculate the average age. Print the result to the console.
-		//Initialize value to hold total.
+		//c.Calcualte the average
 		int total =0;
 		//Iterate through the array to calculate their total. 
 		for(int age :ages) 
@@ -30,22 +25,17 @@ public class CodingAssignment {
 		//Print value / the length to calculate the average.
 		System.out.println("The average age is: "+total/ages.length);
 
-		//2.Create an array of String called names that contains the following values: 
-		//“Sam”, “Tommy”, “Tim”, “Sally”, “Buck”, “Bob”.
+		//Creat Array of type string
 		//Initialize new array using given parameters
 		String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
-		//a. Use a loop to iterate through the array and calculate the average number of letters per name. 
-		//Print the result to the console.
-		//Reset previous used total to 0.
+		//a. return average length of the names
 		total =0;
 		//Iterate through the array and add the length each element to the total variable .
 		for(String name :names) 
 			total+=name.length();		
 		//Print value / the length to calculate the average.
 		System.out.println("The average name length is: "+total/names.length);
-		//b. Use a loop to iterate through the array again and concatenate all the names together, separated 
-		//by spaces, and print the result to the console.
-		//Initialize the string to contain our new string.
+		//b. return names with spaces
 		String concatenateNames="";
 		//Iterate through our array to get each value.
 		//If we are on element 1 we just add the string the value, as we don't want a " " at beginning.
@@ -62,8 +52,7 @@ public class CodingAssignment {
 		//4. How do you access the first element of any array?
 		System.out.println(ages[0]+" is the first elemement");
 
-		//5. Create a new array of int called nameLengths. Write a loop to iterate over the previously created 
-		//names array and add the length of each name to the nameLengths array.
+		//5. Create a new array of int called nameLengths.
 		//New array to hold the lengths.
 		int[] nameLengths = new int [names.length];
 		//Iterate through the names array to get each strings length and assign  that value to the element in namesLength array.
