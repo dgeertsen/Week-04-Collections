@@ -16,8 +16,7 @@ public class CodingAssignment {
 		//arrays of different lengths). 
 		int n = ages.length;
 		int[] newAges = new int[n+1];
-		for(int i =0;i<n;i++)
-			newAges[i]=ages[i];
+		System.arraycopy(ages, 0, newAges, 0, n);
 		newAges[n]=100;
 		subtractAge = newAges[newAges.length-1]-newAges[0];
 		System.out.println(newAges[newAges.length-1]+" - "+newAges[0]+" = "+subtractAge);
@@ -101,44 +100,38 @@ public class CodingAssignment {
 		//10. Write a method that takes an array of double and returns the average of all the elements in the array.
 		//create array of doubles
 		double[] myDoubles = {4,8,12,16,20,24};
-		System.out.println(averageOfDoubleArray (myDoubles));
+		System.out.println("Average of double is: "+averageOfDoubleArray (myDoubles));
 		
 		//11. Write a method that takes two arrays of double and returns true if the average of the elements in the 
 		//first array is greater than the average of the elements in the second array.
 		//False test. MY doubles = my doubles, so it can't be greater.
-		System.out.println(doubleCompare (myDoubles,myDoubles));
+		System.out.println("Double Compare: "+doubleCompare (myDoubles,myDoubles));
 		
 		//True test.
 		double[] years = {3};
-		System.out.println(doubleCompare (myDoubles,years));
+		System.out.println("Double Compare: "+doubleCompare (myDoubles,years));
 		
 		
 		//12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, 
 		//and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
 		//Test cases for false.
-		System.out.println(willBuyDrink (true,10.50));
-		System.out.println(willBuyDrink (false,10.51));
-		System.out.println(willBuyDrink (false,10.50));
+		System.out.println("Will I buy a drink (true, false) "+willBuyDrink (true,10.50));
+		System.out.println("Will I buy a drink (false, true) "+willBuyDrink (false,10.51));
+		System.out.println("Will I buy a drink (false, false) "+willBuyDrink (false,10.50));
 		//Test case for true.
-		System.out.println(willBuyDrink (true,10.51));
+		System.out.println("Will I buy a drink (true, true) "+willBuyDrink (true,10.51));
 		
 		//13. Create a method of your own that solves a problem. In comments, write what the method does and 
 		//why you created it.
 		//50% for Must Haves
 		//30% Wants
-		//20% debt repayment
+		//20% debt repayments
 		System.out.println(myBudget(3570));
 		
 	}
 
 	
-	public static String myBudget(int salary) {
-		// TODO Auto-generated method stub
-		return "Must haves: "+salary*.50
-				+"\nWants: "+salary*.30
-				+"\nWDebt: "+salary*.20;
-		
-	}
+
 
 
 	//Method takes an int and string. It then concatenates the string x number of times, where x = the int passed.
@@ -148,12 +141,12 @@ public class CodingAssignment {
 		//for loop to, concatenate userWord, numTimes.
 		for(int i = 0; i < numTimes; i++)
 			myString += userWord;
-		return myString;
+		return "Repeat word N Times: "+ myString;
 	}
 	
 	//Method that concatenates first and last name to return full name.
 	static String fullName(String firstName, String string) {
-		return firstName + " "+string;
+		return "Full Name: "+firstName + " "+string;
 
 
 	}
@@ -182,24 +175,22 @@ public class CodingAssignment {
 		return total/numbers.length;
 	}
 	
-	//Compares two arrays of type double. REturns true based on average values
-	static boolean doubleCompare (double[] arrayOne,double[] arrayTwo) {
-		double totalOne=0;
-		double totalTwo=0;
-		//Add each element of the array to total.
-		for(double number:arrayOne)
-			totalOne+=number;
-		for(double number:arrayTwo)
-			totalTwo+=number;
-		//Compare the values and return a value
-		return (totalOne/arrayOne.length>totalTwo/arrayTwo.length);
-			
+	//Compares two arrays of type double. REturns true based on average values. Uses averageOfDoubleArray method
+	static boolean doubleCompare (double[] arrayOne, double[] arrayTwo) {
+		return (averageOfDoubleArray(arrayOne)>averageOfDoubleArray(arrayTwo));
 	}
 	
+	//Returns a boolean based on boolean and Double
 	static boolean willBuyDrink (boolean isHotOutside,double moneyInPocket) {
 		return (isHotOutside == true && moneyInPocket>10.50);
 	}
-	
+	public static String myBudget(int salary) {
+		// TODO Auto-generated method stub
+		return "Must haves: "+salary*.50
+				+"\nWants: "+salary*.30
+				+"\nDebt: "+salary*.20;
+		
+	}
 	
 }
 
